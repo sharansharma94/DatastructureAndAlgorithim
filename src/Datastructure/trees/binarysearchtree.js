@@ -40,21 +40,29 @@ var BinarySearchTree = /** @class */ (function () {
         }
     };
     BinarySearchTree.prototype["delete"] = function (num) {
+        return num;
+    };
+    BinarySearchTree.prototype.deleteIterative = function (num) {
         var current = this._root;
+        var parent = this._root;
         while (current !== null) {
-            if (current.data === num)
+            if (current.data === num) {
+                //item has no element
+                if (current.left === null && current.right === null)
+                    parent;
                 break;
+            }
             if (num < current.data) {
+                parent = current;
                 current = current.left;
             }
             if (num > current.data) {
+                parent = current;
                 current = current.right;
             }
         }
         if (!current)
             console.log("not found");
-        else
-            console.log(current);
     };
     return BinarySearchTree;
 }());
