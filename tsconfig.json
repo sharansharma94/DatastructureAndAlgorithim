@@ -1,3 +1,12 @@
 {
-	"compiler":{ "outDir": "./built", "allowJs": true, "target":"es5"},
-	"include":["./src/**/*"]}
+	"compiler": {
+		"outDir": "./built",
+		"allowJs": true,
+		"target": "es5",
+		"module": "es2015",
+		"esModuleInterop": true
+	},
+	"include": [
+		"./src/**/*"
+	]
+}
