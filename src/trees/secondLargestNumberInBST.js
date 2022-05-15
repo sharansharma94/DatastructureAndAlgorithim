@@ -29,6 +29,21 @@ class BST {
     return node;
   }
 
+  inOrder(node) {
+    if (node !== null) {
+      this.inOrder(node.left);
+      console.log(node.data);
+      this.inOrder(node.right);
+    }
+  }
+
+  reverseInOrder(node) {
+    if (node === null) return;
+    this.reverseInOrder(node.right);
+    console.log(node.data);
+    this.reverseInOrder(node.left);
+  }
+
   secondLargestUtil(node, C) {
     if (node === null || C.c >= 2) return;
 
@@ -37,7 +52,7 @@ class BST {
     C.c++;
 
     if (C.c === 2) {
-      console.log(node.data);
+      console.log("second largest is:", node.data);
       return;
     }
 
@@ -65,5 +80,8 @@ bst.insert(70);
 bst.insert(60);
 bst.insert(80);
 bst.insert(90);
+
+// bst.inOrder(bst.root);
+bst.reverseInOrder(bst.root);
 
 bst.secondLargest(bst.root);
