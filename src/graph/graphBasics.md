@@ -1,6 +1,8 @@
-// const V = { 0, 1, 2, 3};
-// const E = { [0, 1], [0, 2], [0, 3], [1, 2]};
-// const G = { V, E } 
+### Example
+
+> const V = { 0, 1, 2, 3};
+   const E = { [0, 1], [0, 2], [0, 3], [1, 2]};
+   const G = { V, E } 
 
 
 ### Adjacency 
@@ -22,7 +24,7 @@
     c. Requires more space
 
 2. Adjacency list
-
+>
     a. array of linked list 
     b. requires less storage
 
