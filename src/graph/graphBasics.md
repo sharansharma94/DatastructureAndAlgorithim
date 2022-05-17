@@ -1,6 +1,8 @@
-// const V = { 0, 1, 2, 3};
-// const E = { [0, 1], [0, 2], [0, 3], [1, 2]};
-// const G = { V, E } 
+### Example
+
+> const V = { 0, 1, 2, 3};
+   const E = { [0, 1], [0, 2], [0, 3], [1, 2]};
+   const G = { V, E } 
 
 
 ### Adjacency 
@@ -22,13 +24,15 @@
     c. Requires more space
 
 2. Adjacency list
-
+>
     a. array of linked list 
     b. requires less storage
 
 ## operations
 
 1. check if element is present in the graph 
+	1. vertices is available
+	2. edge is available
 2. Graph Traversal 
 3. Add elements(vertex, edges) to graph 
 4. Find path from one vertex to another.
