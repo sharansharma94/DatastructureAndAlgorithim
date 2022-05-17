@@ -11,7 +11,7 @@ edges may or maynot have weights
 
 > total number of spanning tree with n vertices that can be created from a complete graph is equal to n ^(n-2)
 > Example : n =4 
-> 4^4-2 = 16 
+> 4^(4-2) = 16 
 > Thus 16 spanning trees can be formed from a complete graph with 4 vertices.
 
 

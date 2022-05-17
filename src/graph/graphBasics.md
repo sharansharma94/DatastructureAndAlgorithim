@@ -31,6 +31,8 @@
 ## operations
 
 1. check if element is present in the graph 
+	1. vertices is available
+	2. edge is available
 2. Graph Traversal 
 3. Add elements(vertex, edges) to graph 
 4. Find path from one vertex to another.
