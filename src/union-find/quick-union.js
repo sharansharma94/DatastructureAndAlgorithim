@@ -50,3 +50,4 @@ qf.union(1, 0);
 
 
 console.log(qf.connected(0, 7))
+console.log(qf.connected(8, 6))
