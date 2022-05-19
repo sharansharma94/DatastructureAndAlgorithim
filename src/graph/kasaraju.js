@@ -24,6 +24,15 @@ class Graph {
         }
     }
 
+    transpose() {
+        let g = new Graph(this.V);
+        for (let i in this.graph) {
+            for (let j in this.graph[i])
+                g.addEdge(j, i)
+        }
+        return g
+    }
+
     printSCC() {
         const stact = [];
         visitedVertex = new Array(this.V).fill(false)
