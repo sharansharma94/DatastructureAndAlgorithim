@@ -58,8 +58,24 @@ class LinkedList {
         }
     }
 
+    removeDupsWithBruteForce() {
+        // O(n^2) time
+        // O(1) space
+        let current = this.head;
 
+        while (current) {
 
+            // find all occurences of current one and unlink them 
+            let temp = current;
+            while (temp.next) {
+                if (temp.next.val === current.val) {
+                    temp.next = temp.next.next;
+                } else
+                    temp = temp.next;
+            }
+            current = current.next;
+        }
+    }
 }
 
 const ll = new LinkedList();
@@ -74,6 +90,7 @@ ll.append(new Node(9))
 
 ll.print()
 
-ll.removeDupsWithSpace()
+// ll.removeDupsWithSpace()
+ll.removeDupsWithBruteForce()
 console.log("\n")
 ll.print()
