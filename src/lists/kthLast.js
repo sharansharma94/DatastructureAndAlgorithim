@@ -43,6 +43,26 @@ class List {
 
         console.log("kth element is : ", slow.data);
     }
+
+
+    recurseHelper(n, node) {
+        if (node.next === null) {
+            return 1;
+        }
+
+        let count = this.recurseHelper(n, node.next) + 1;
+
+        if (count === n) {
+            console.log("kth element is : ", node.data);
+        }
+        return count
+
+    }
+
+    findFromLastRecursive(n) {
+        this.recurseHelper(n, this.head)
+    }
+
 }
 
 const first = new Node(1)
@@ -61,4 +81,5 @@ const ll = new List(first)
 // console.log();
 
 ll.print()
-ll.findFromLast(0)
+// ll.findFromLast(0)
+ll.findFromLastRecursive(2);
