@@ -1,8 +1,5 @@
 // Largest sum of contiguous subarray
 
-
-
-
 function bruteForce(a) {
     let maxSum = a[0];
 
@@ -25,13 +22,9 @@ function bruteForce(a) {
 
     }
 
-
-
     return maxSum;
 
 }
-
-
 
 const a = [-5, 4, 6, -3, 4, -1]
 
