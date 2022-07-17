@@ -8,6 +8,16 @@ const graph = {
 }
 
 
+const graphWithCycle = {
+    i: ['j', 'k'],
+    j: ['i', 'k'],
+    k: ['i', 'm', 'l', 'j'],
+    m: ['k'],
+    l: ['k'],
+    o: ['n'],
+    n: ['o']
+}
+
 
 
 function hasPath(graph, src, dest) {
@@ -40,7 +50,7 @@ function hasPath(graph, src, dest) {
 
 }
 
-function hasPathRecu(graph, src, dest) {
+function hasPathRecu(graph, src, dest, visited) {
 
     if (!(src in graph) && !(dest in graph))
         return false
@@ -48,8 +58,12 @@ function hasPathRecu(graph, src, dest) {
     if (src === dest)
         return true;
 
+    if (visited.has(src)) return false
+
+
+    visited.add(src)
     for (let neighbour of graph[src]) {
-        if (hasPathRecu(graph, neighbour, dest)) {
+        if (hasPathRecu(graph, neighbour, dest, visited)) {
             return true
         }
     }
@@ -85,15 +99,15 @@ function hasPathBFS(graph, src, dest) {
 }
 
 
-
+const visited = new Set()
 console.log(
-    hasPathRecu(graph, 'f', 'k')
+    hasPathRecu(graphWithCycle, 'i', 'k', visited)
 );
 
 
 console.log(
-    hasPath(graph, 'h', 'k')
+    hasPath(graphWithCycle, 'i', 'o')
 );
-console.log(
-    hasPathBFS(graph, 'h', 'k')
-);
+// console.log(
+//     hasPathBFS(graph, 'h', 'k')
+// );
