@@ -7,8 +7,9 @@ class Node {
 }
 
 class List {
-    constructor() {
+    constructor(data) {
         this.head = null
+        this.vertex = data
     }
 
     add(data) {
@@ -26,13 +27,13 @@ class List {
     }
 }
 
-export default class Graph {
+class Graph {
     constructor() {
         this.vertices = {}
     }
 
     addVertex(data) {
-        let ll = new List();
+        let ll = new List(data);
         this.vertices[data] = ll;
     }
 
@@ -54,11 +55,15 @@ export default class Graph {
         if (!this.contains(name)) return;
 
         const vertex = this.vertices[name];
-        console.log(this._listToArray(vertex));
+        return (this._listToArray(vertex));
     }
 
     nodes() {
         return this._objectKeysToArray(this.vertices)
+    }
+
+    node(name) {
+        return this.vertices[name]
     }
 
     connected(from, to) {
@@ -108,28 +113,40 @@ export default class Graph {
 }
 
 
+export class DirectedGraph extends Graph {
+    addEdge(from, to) {
+        const fromV = this.vertices[from];
+        const toV = this.vertices[to]
+        if (fromV && toV) {
+            fromV.add(to);
+        } else {
+            console.log("given vertices not available");
+        }
+    }
+}
 
 
 
-const graph = new Graph();
-graph.addVertex(0);
-graph.addVertex(1);
-graph.addVertex(2);
-graph.addVertex(3);
+
+// const graph = new Graph();
+// graph.addVertex(0);
+// graph.addVertex(1);
+// graph.addVertex(2);
+// graph.addVertex(3);
 
 
-graph.addEdge(0, 3)
-graph.addEdge(0, 1)
-graph.addEdge(0, 2)
+// graph.addEdge(0, 3)
+// graph.addEdge(0, 1)
+// graph.addEdge(0, 2)
 
 
-console.log(graph.contains(3));
+// console.log(graph.contains(3));
 
 
-console.log("connected : ", graph.connected(6, 4));
+// console.log("connected : ", graph.connected(6, 4));
 
-console.log(graph.edges());
+// console.log(graph.edges());
 
-graph.neighbours(0)
-console.log(graph.nodes());
-console.log(graph.vertices);
+// graph.neighbours(0)
+// console.log(graph.nodes());
+// console.log(graph.vertices);
