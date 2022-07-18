@@ -13,7 +13,7 @@ function addVertex(graph, vertex) {
     if (vertex in graph) return
     graph[vertex] = []
 }
-function convertEdgesToGraph(graph, edges) {
+export function convertEdgesToGraph(graph, edges) {
 
     for (let edge of edges) {
         let [src, dest] = edge;
@@ -28,5 +28,5 @@ function convertEdgesToGraph(graph, edges) {
 }
 
 
-convertEdgesToGraph(graph, edges)
-console.log(graph);
+// convertEdgesToGraph(graph, edges)
+// console.log(graph);
